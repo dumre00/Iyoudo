@@ -9,6 +9,7 @@ const CustomMap = () => {
     { name: 'C/ de València, 212, L\'Eixample, 08011 Barcelona', coords: [41.3931, 2.1551] },
     { name: 'Carrer d\'Albert Einstein, 11, Nou Barris, 08042 Barcelona', coords: [41.4469, 2.1743] }
   ];
+  
 
   return (
     <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}> {/* Zentrieren Sie das Container-Element */}

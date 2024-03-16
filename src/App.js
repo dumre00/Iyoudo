@@ -9,6 +9,7 @@ import logo from './components/images/logo_web.png';
 import './App.css';
 import Image from  './components/images/logo_web.png';
 import Registro from './components/Registro.js';
+import Recover from './components/Recover.js';
 
 
 function App() {
@@ -33,12 +34,15 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registro" element={<Registro />} />
+          <Route path="/recover" element={<Recover />} />
           <Route path="/user" element={<User />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </Router>
+    
   );
 }
+
 
 export default App;

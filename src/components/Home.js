@@ -12,6 +12,11 @@ function Home() {
         <User />{}
         <CustomMap /> {}
       </div>
+
+
+    <footer>
+        <p>© 2024 Iyoudo. Todos los derechos reservados.</p>
+      </footer>
     </div>
   );
 }
