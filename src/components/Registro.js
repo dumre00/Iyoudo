@@ -10,6 +10,7 @@ function Registro() {
   const [phone, setPhone] = useState('');
   const [mail, setMail] = useState('');
   const [file, setFile] = useState(null); // Estado para almacenar el archivo seleccionado
+  const [imagen, setImagen] = useState(null); // Estado para almacenar el archivo seleccionado
   const [role, setRole] = useState('Seleccionar'); // Estado para almacenar el rol seleccionado
 
   const [registro, setRegistro] = useState(false); // Declarar loginError y setLoginError
@@ -21,6 +22,11 @@ function Registro() {
   const handleFileChange = (e) => {
     const selectedFile = e.target.files[0];
     setFile(selectedFile);
+  };
+  const handleImageChange = (e) => {
+
+    const selectedFile = e.target.files[0];
+    setImagen(selectedFile);
 
   };
 
@@ -38,8 +44,8 @@ function Registro() {
     e.preventDefault(); // Evitar el envío del formulario por defecto
 
     // Validar que todos los campos estén llenos
-    if (!username || !surname || !password || !phone || !mail || !file || role === 'Seleccionar') {
-    //  alert('Por favor, completa todos los campos y selecciona un rol.');
+    if (!username || !surname || !password || !phone || !mail || !file || !imagen || role === 'Seleccionar') {
+      //  alert('Por favor, completa todos los campos y selecciona un rol.');
       setErrorRegistro(true);
 
       return;
@@ -60,6 +66,8 @@ function Registro() {
     setPhone('');
     setMail('');
     setFile(null); // Limpiar el archivo seleccionado
+    setImagen(null); // Limpiar el archivo seleccionado
+
     setTimeout(() => {
       navigate('/login');
     }, 1500);
@@ -89,30 +97,47 @@ function Registro() {
               onChange={(e) => setMail(e.target.value)} />
           </div>
           <div className="form-group">
-            <input className="input" type="text" inputMode="numeric" pattern="[0-9]*" placeholder="Telefono" value={phone}
+            <input className="input" type="text" inputMode="numeric" pattern="[0-9]*" placeholder="Teléfono" value={phone}
               onChange={(e) => setPhone(e.target.value)} onKeyDown={soloNumeros} />
           </div>
           <div className="form-group">
             <input className="input" type="password" placeholder="Contraseña" value={password}
               onChange={(e) => setPassword(e.target.value)} />
           </div>
+
           <div className="form-group">
-            <p>Selecciona un rol:</p>
+            <p>Selecciona tu rol:</p>
             <select id="role" className="input" value={role} onChange={(e) => setRole(e.target.value)}>
               <option value="Seleccionar">Seleccionar</option>
               <option value="Voluntario">Voluntario</option>
               <option value="Solicitante">Solicitante</option>
             </select>
           </div>
+
+          <p>Inserta tu DNI y tu foto</p>
           <div className="form-group">
-            <p>Inserta tu DNI (solo PDF)</p>
-            <input
-              className="input"
-              type="file"
-              accept=".pdf"
-              onChange={handleFileChange}
-            />
+            <div className="upload-btn-wrapper">
+              <button className="btn">Seleccionar Documento</button>
+              <input
+                className="input"
+                type="file"
+                accept=".pdf"
+                onChange={handleFileChange}
+              />
+            </div>
+
+            <div className="upload-btn-wrapper">
+              <button className="btn">Seleccionar Imagen</button>
+              <input
+                className="input"
+                type="file"
+                accept=".jpg"
+                onChange={handleImageChange}
+              />
+            </div>
           </div>
+
+
 
           <button className="button" type="submit" onClick={handleRegister} >Registro</button>
         </form>
