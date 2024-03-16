@@ -25,7 +25,7 @@ function Login() {
 
       setTimeout(() => {
         navigate('/');
-      }, 1500);
+      }, 200);
 
     } else {
       setLoginError(true); // Cambia el estado para mostrar el mensaje de error

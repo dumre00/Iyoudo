@@ -1,6 +1,7 @@
 import React from 'react';
 import CustomMap from './CustomMap';
 import User from './User';
+
 function Home() {
   return (
     <div className="Home">
