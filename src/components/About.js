@@ -32,8 +32,7 @@ function About() {
                 <img src="adrian.jpeg" alt="Adrian Patiño Ojeda" className="foto-estudiante" style={{ height: '200px', width: '200px', borderRadius: '50%' }} />
                 <p><strong>Adrian Patiño Ojeda</strong></p>
               </a>
-              <p>Estudiante 
-                <p> </p>Ingeniería Informática</p>
+              <p>Estudiante <br /> Ingeniería Informática</p>
             </div>
             <div className="estudiante" style={{ marginRight: '10px' }}>
               <a href="https://www.linkedin.com/in/alvaro-herrera-sapaico-24791117a/">
